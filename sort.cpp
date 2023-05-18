@@ -1,11 +1,11 @@
 #include <iostream>
-#include "../Vector.h"
-#include <ctime>//ÓÃÓÚ»ñÈ¡Ëæ»úÊıÖÖ×ÓºÍclock()º¯Êı 
+#include "Vector.h"
+#include <ctime>//ç”¨äºè·å–éšæœºæ•°ç§å­å’Œclock()å‡½æ•° 
 #include <chrono>
 using namespace std::chrono; 
 int main()
 {
-	srand(time(NULL));//»ñÈ¡µ±Ç°Ê±¼ä¶ÔÓ¦µÄËæ»úÊıÖÖ×Ó£¬È·±£Ã¿´ÎÉú³ÉËæ»úÊı¶¼²»Ò»Ñù
+	srand(time(NULL));//è·å–å½“å‰æ—¶é—´å¯¹åº”çš„éšæœºæ•°ç§å­ï¼Œç¡®ä¿æ¯æ¬¡ç”Ÿæˆéšæœºæ•°éƒ½ä¸ä¸€æ ·
 	int n;
 	cin>>n;
 	Vector<int> Vec(n, n, (0, 0));
@@ -16,108 +16,108 @@ int main()
 	Vec.unsort();
 	Vec.quickSort(0, Vec.size());
 
-	cout<<"Ë³ĞòÇé¿öÏÂ"<<endl;
-	auto start = high_resolution_clock::now();  // Ê¹ÓÃ¸ß¾«¶ÈÊ±ÖÓ
+	cout<<"é¡ºåºæƒ…å†µä¸‹"<<endl;
+	auto start = high_resolution_clock::now();  // ä½¿ç”¨é«˜ç²¾åº¦æ—¶é’Ÿ
 	Vec.bubbleSort(0, Vec.size());
-	auto end = high_resolution_clock::now();  // Ê¹ÓÃ¸ß¾«¶ÈÊ±ÖÓ
+	auto end = high_resolution_clock::now();  // ä½¿ç”¨é«˜ç²¾åº¦æ—¶é’Ÿ
 	auto elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "Ã°ÅİÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "å†’æ³¡è¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 		
 	start = high_resolution_clock::now();
 	Vec.mergeSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "¹é²¢ÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "å½’å¹¶è¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 
 	start = high_resolution_clock::now();
 	Vec.quickSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "¿ìËÙÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "å¿«é€Ÿè¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 
 	start = high_resolution_clock::now();
 	Vec.selectionSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "Ñ¡ÔñÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "é€‰æ‹©è¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 
 	start = high_resolution_clock::now();
 	Vec.insertSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "²åÈëÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "æ’å…¥è¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 
-	cout<<"ÂÒĞòÇé¿öÏÂ"<<endl;
+	cout<<"ä¹±åºæƒ…å†µä¸‹"<<endl;
 	Vec.unsort(); 
 	start = high_resolution_clock::now(); 
 	Vec.bubbleSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "Ã°ÅİÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "å†’æ³¡è¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 
 	Vec.unsort();
 	start = high_resolution_clock::now();
 	Vec.mergeSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "¹é²¢ÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "å½’å¹¶è¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 
 	Vec.unsort();
 	start = high_resolution_clock::now();
 	Vec.quickSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "¿ìËÙÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "å¿«é€Ÿè¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 
 	Vec.unsort();
 	start = high_resolution_clock::now();
 	Vec.selectionSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "Ñ¡ÔñÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "é€‰æ‹©è¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 
 	Vec.unsort();
 	start = high_resolution_clock::now();
 	Vec.insertSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "²åÈëÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "æ’å…¥è¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 	
-	cout <<"ÄæĞòÇé¿öÏÂ"<<endl;
+	cout <<"é€†åºæƒ…å†µä¸‹"<<endl;
 	Vec.reverse();
 	start = high_resolution_clock::now();
 	Vec.bubbleSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "¹é²¢ÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "å½’å¹¶è¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 	
 	Vec.reverse();
 	start = high_resolution_clock::now();
 	Vec.mergeSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "¹é²¢ÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "å½’å¹¶è¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 
 	Vec.reverse();
 	start = high_resolution_clock::now();
 	Vec.quickSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "¿ìËÙÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "å¿«é€Ÿè¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 
 	Vec.reverse();
 	start = high_resolution_clock::now();
 	Vec.selectionSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "Ñ¡ÔñÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "é€‰æ‹©è¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 
 	Vec.reverse();
 	start = high_resolution_clock::now();
 	Vec.insertSort(0, Vec.size());
 	end = high_resolution_clock::now();
 	elapsed_time = duration_cast<duration<double>>(end - start);
-	cout << "²åÈëÔËĞĞÊ±¼ä: " << elapsed_time.count() << " Ãë" << endl;
+	cout << "æ’å…¥è¿è¡Œæ—¶é—´: " << elapsed_time.count() << " ç§’" << endl;
 	
 	return 0;
 }
